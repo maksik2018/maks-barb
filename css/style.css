@@ -56,6 +56,22 @@ a {
 
   letter-spacing: 0.1em;
   text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  }
+
+.pretitle::before {
+  display: inline-block;
+  content: "";
+  width: 60px;
+  height: 1px;
+  background-color: var(--graphite);
+  
+  margin-right: 20px;
+
+  
+
 }
 
 /* переназначаем шрифт для заголовков секций через общий класс */
@@ -111,6 +127,19 @@ a {
   display: flex;
 }
 
+.media-list::before {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background-color: white;
+  display: inline-block;
+  margin-right: 40px;
+ }
+
+.media-list {
+  align-items: center;
+}
+
 .header .media-list {
   position: absolute;
   bottom: -399px;
@@ -119,8 +148,8 @@ a {
   z-index: 2;
 }
 
-.media-list li {
-  margin-left: 40px;
+.media-list li:first-child {
+  margin-right: 40px;
 }
 
 .header-nav {
@@ -136,6 +165,7 @@ a {
 .contacts-list {
   margin-left: 322px;
 }
+
 
 .contacts-list li:last-child {
   margin-left: 40px;
@@ -171,6 +201,15 @@ a {
 .hero-pretitle {
   color: var(--grey-text-op60);
   margin-top: 184px;
+}
+
+.hero .pretitle::before,
+.contacts .pretitle::before {
+  background-color: var(--grey-text-op60);
+}
+
+.services .pretitle::before {
+  background-color: var(--grey-text-op60);
 }
 
 .hero-title {
@@ -465,13 +504,28 @@ a {
 .master-icons li {
   width: 44px;
   height: 44px;
-
-  }
+  background-color: white;
+  display: flex;
+    }
 
 .master-icons li:not(last-child) {
   margin-right: 10px;
 }
 
+.master-icons a, .master-icons svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 6px;
+}
+
+.master-icons a:hover {
+  color: var(--orange);
+}
+
+.master-icons svg:hover {
+  fill: currentColor;
+}
 /* === BARBA === */
 .barba .container {
   padding-top: 130px;
@@ -491,7 +545,8 @@ a {
   
 }
 
-/* === CONTACTS === */
+/* === 
+ === */
 .contacts {
   background: rgba(25, 28, 38, 1);
 }
